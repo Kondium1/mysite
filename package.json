@@ -1,0 +1,21 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tailwindcss build src/input.css -o dist/styles.css"
+  },
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "^3.4.12"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "swiper": "^11.1.12"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module"
+}
