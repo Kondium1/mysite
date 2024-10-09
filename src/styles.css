@@ -702,10 +702,6 @@ video {
   display: none;
 }
 
-.slides {
-  position: relative;
-}
-
 .slide.active{
   display: block;
 }
