@@ -4,7 +4,7 @@ function generateBreadcrumbs() {
     const category = JSON.parse(localStorage.getItem('categories')) || [];
     const productId = urlParams.get('id');
 
-    const homeCrumb = `<li><a href="index.html" class="text-blue-500 hover:underline">Home</a></li>`;
+    const homeCrumb = `<li><a href="/WebSite/index.html" class="text-blue-500 hover:underline">Home</a></li>`;
     breadcrumb.innerHTML += homeCrumb;
 
     if (category) {
