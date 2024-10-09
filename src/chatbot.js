@@ -41,7 +41,7 @@ function initChatBot() {
 
     const audio = document.createElement('audio');
     audio.id = 'audio-file';
-    audio.src = 'src/da.mp3'
+    audio.src = '../da.mp3'
 
     const sendButton = document.createElement('button');
     sendButton.id = 'send-btn';
