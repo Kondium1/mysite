@@ -18,7 +18,6 @@ function initChatBot() {
     chatTitle.className = 'text-lg font-semibold';
     chatTitle.innerText = 'Чат-бот';
 
-    // Кнопка очистки истории
     const clearButton = document.createElement('button');
     clearButton.id = 'clear-btn';
     clearButton.className = 'ml-2 p-2 bg-red-500 text-white rounded hover:bg-red-600';
@@ -42,7 +41,7 @@ function initChatBot() {
 
     const audio = document.createElement('audio');
     audio.id = 'audio-file';
-    audio.src = '/src/da.mp3'
+    audio.src = 'src/da.mp3'
 
     const sendButton = document.createElement('button');
     sendButton.id = 'send-btn';
@@ -56,11 +55,9 @@ function initChatBot() {
     chatBox.appendChild(inputContainer);
     chatBox.appendChild(audio);
 
-    // Создаем контейнер для кнопок FAQ
     const faqContainer = document.createElement('div');
     faqContainer.className = 'p-4 h-32 overflow-y-auto flex flex-wrap gap-2 border-t';
 
-    // Список часто задаваемых вопросов
     const faqQuestions = [
         'Как сделать заказ?',
         'Как я могу вернуть товар?',
@@ -79,10 +76,10 @@ function initChatBot() {
         // Обработчик событий для кнопок FAQ
         faqButton.addEventListener('click', () => {
             appendMessage(question, 'user');
-            saveMessage(question, 'user'); // Сохраняем вопрос в localStorage
+            saveMessage(question, 'user');
             generateBotResponse(question).then(botResponse => {
                 appendMessage(botResponse, 'bot');
-                saveMessage(botResponse, 'bot'); // Сохраняем ответ бота в localStorage
+                saveMessage(botResponse, 'bot');
             });
         });
 
@@ -95,7 +92,7 @@ function initChatBot() {
 
     chatToggleButton.addEventListener('click', () => {
         chatBox.classList.toggle('hidden');
-        loadChatHistory(); // Загружаем историю чата при открытии
+        loadChatHistory();
     });
 
     sendButton.addEventListener('click', sendMessage);
@@ -106,7 +103,7 @@ function initChatBot() {
     });
 
     clearButton.addEventListener('click', clearChatHistory);
-    loadChatHistory(); // Загружаем историю чата при инициализации
+    loadChatHistory();
 }
 
 // Функция для отправки сообщения
@@ -117,12 +114,12 @@ async function sendMessage() {
     if (userMessage.trim() === '') return;
 
     appendMessage(userMessage, 'user');
-    saveMessage(userMessage, 'user'); // Сохраняем сообщение в localStorage
+    saveMessage(userMessage, 'user');
     inputField.value = '';
 
     const botResponse = await generateBotResponse(userMessage);
     appendMessage(botResponse, 'bot');
-    saveMessage(botResponse, 'bot'); // Сохраняем ответ бота в localStorage
+    saveMessage(botResponse, 'bot');
 }
 
 // Функция для добавления сообщения
@@ -132,7 +129,7 @@ function appendMessage(message, sender) {
     messageElement.textContent = message;
     messageElement.className = sender === 'user' ? 'text-right text-blue-600 mb-2' : 'text-left text-gray-600 mb-2';
     messagesContainer.appendChild(messageElement);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight; // Прокрутка вниз
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
 // Функция для генерации ответа бота

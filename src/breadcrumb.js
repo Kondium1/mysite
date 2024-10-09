@@ -10,8 +10,9 @@ function generateBreadcrumbs() {
     if (category) {
         const isCategoryPage = window.location.search.includes(`category`);
         const categoryCrumb = `
-        <li><span class="mx-2">/</span>
-        ${isCategoryPage ? `<span>${category}</span>` : `<a href="category.html?category=${category}" class="text-blue-500 hover:underline">${category}</a>`}
+        <li>
+            <span class="mx-2">/</span>
+            ${isCategoryPage ? `<span>${category}</span>` : `<a href="category.html?category=${category}" class="text-blue-500 hover:underline">${category}</a>`}
         </li>`;
         breadcrumb.innerHTML += categoryCrumb;
     }
