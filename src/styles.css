@@ -698,10 +698,3 @@ video {
   grid-template-rows: repeat(2, minmax(auto, auto));
 }
 
-.slide{
-  display: none;
-}
-
-.slide.active{
-  display: block;
-}
