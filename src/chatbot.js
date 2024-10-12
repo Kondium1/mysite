@@ -1,6 +1,3 @@
-// script.js
-
-// Функция для инициализации чат-бота
 function initChatBot() {
     const chatToggleButton = document.createElement('button');
     chatToggleButton.id = 'chat-toggle';
