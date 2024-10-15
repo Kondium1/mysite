@@ -9,10 +9,15 @@ let amount = 0;
 function createCartProduct(product) {
     const price = product.originalPrice * product.quantity;
     const page = document.createElement('div');
-    page.classList.add("grid", "grid-cols-2auto", "md:grid-cols-3", "shadow-md", "rounded-2xl", "p-2", "min-h-48", "gap-2");
+    page.classList.add("grid", "grid-cols-2auto", "md:grid-cols-3", "shadow-md", "rounded-2xl", "p-2", "min-h-48", "gap-2", "rounded-md");
     page.innerHTML = `
-        <div class="col-start-1">
-            <img class="h-28 w-28 md:w-52 md:h-52" src="${product.image1}" alt="${product.title}">
+        <div class="grid group relative justify-items-center items-center">
+            <a href="ProductPage.html?id=${product.id}" class="col-start-1 rounded-md">
+                <img class="object-cover h-28 w-24 md:w-48 md:h-52" src="${product.image1}" alt="${product.title}">
+            </a>
+            <button onclick="quickView(${product.id})" class="absolute bottom-8 left-1/2 rounded-md transform -translate-x-1/2 bg-blue-500 text-white px-4 py-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                Быстрый просмотр 
+            </button>
         </div>
         <div class="grid max-w-40 col-start-1 grid-cols-3 self-center md:col-start-3 md:justify-self-center md:self-center">
             <button onclick="updateQuantity(${product.id}, -1)" class="justify-self-end h-8 w-8 bg-gray-300 rounded-md hover:bg-gray-400"> - </button>
@@ -22,7 +27,7 @@ function createCartProduct(product) {
             <button onclick="updateQuantity(${product.id}, 1)" class="justify-self-start h-8 w-8 bg-gray-300 rounded-md hover:bg-gray-400"> + </button>
         </div>
         <div class="col-start-2 row-start-1">
-          <p>${product.title}</p>
+          <a href="ProductPage.html?id=${product.id}">${product.title}</a>
           <p id="price-${product.id}" class="text-purple-700 font-bold text-2xl">${price} ₽</p>
         </div>
         <button onclick="deleteProduct(${product.id})" class="bg-gray-300 p-1 rounded-md hover:bg-red-500 duration-200 justify-self-end md:justify-self-center md:self-center md:p-2 col-start-4">
