@@ -85,7 +85,6 @@ function displayProducts() {
     productsToShow.forEach(product => {
         const productCard = createProductCard(product);
         cardsContainer.appendChild(productCard);
-
     });
 }
 

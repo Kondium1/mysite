@@ -155,8 +155,6 @@ async function generateBotResponse(userMessage) {
         return 'Приветствую вас. Чем могу помочь?';
     } else if (lowerCaseMessage.includes('пока') || lowerCaseMessage.includes('до свиданиия') || lowerCaseMessage.includes('прощай')) {
         return 'До свидания. Желаю доброго дня.';
-    } else if (lowerCaseMessage.includes('пошел нахуй') || lowerCaseMessage.includes('пошёл нахуй') || lowerCaseMessage.includes('иди нахуй')) {
-        return 'Сам пошёл нахуй долбоёб, иди учи уроки шкiла';
     } else {
         return 'Извините, я не понимаю вас. Могу помочь с чем-то еще?';
     }
