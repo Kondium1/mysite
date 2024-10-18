@@ -59,7 +59,6 @@ function initChatBot() {
 
     const faqQuestions = [
         'Как сделать заказ?',
-        'Как я могу вернуть товар?',
         'Сколько времени занимает доставка?',
         'Как узнать о наличии товара?',
         'Как получить скидку?',
@@ -72,7 +71,6 @@ function initChatBot() {
         faqButton.className = 'p-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300';
         faqButton.innerText = question;
 
-        // Обработчик событий для кнопок FAQ
         faqButton.addEventListener('click', () => {
             appendMessage(question, 'user');
             saveMessage(question, 'user');
