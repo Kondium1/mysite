@@ -1,12 +1,12 @@
 function initChatBot() {
     const chatToggleButton = document.createElement('button');
     chatToggleButton.id = 'chat-toggle';
-    chatToggleButton.className = 'hidden md:flex fixed bottom-32 right-12 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600';
+    chatToggleButton.className = 'fixed bottom-16 right-8 md:bottom-32 md:right-12 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600';
     chatToggleButton.innerHTML = '💬';
 
     const chatBox = document.createElement('div');
     chatBox.id = 'chat-box';
-    chatBox.className = 'hidden fixed bottom-28 right-28 bg-white rounded-lg shadow-lg w-80 max-w-full';
+    chatBox.className = 'hidden fixed right-6 bottom-28 md:right-28 bg-white rounded-lg shadow-lg w-80 max-w-full';
 
     const chatHeader = document.createElement('div');
     chatHeader.className = 'p-4 border-b flex justify-between items-center';

@@ -1,4 +1,3 @@
-/*Контейнер карточек*/
 const cardsContainer = document.getElementById('cards-container');
 const paginationContainer = document.getElementById('pagination');
 const toTopBtn = document.getElementById('toTopBtn');
